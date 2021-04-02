@@ -12,7 +12,7 @@ pipeline {
         stage('Source') {
             steps{
                 git(
-                        url: 'https://github.com/libane97/rest-api-calculator-java.git',
+                        url: 'https://github.com/dialrock360/java-rest-api-calculator.git',
                         branch: 'main'
                     ) 
             }
