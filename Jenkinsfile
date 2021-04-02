@@ -7,7 +7,7 @@ pipeline {
             steps{
                 cleanWs()
             }
-        } 
+        } bat
         
         stage('Source') {
             steps{
@@ -22,13 +22,13 @@ pipeline {
             
             steps{
                  script{
-                bat('mvnw clean test')
+                sh('mvnw clean test')
                    }
             }
         } 
         stage('Test Integration'){
             steps{
-                bat 'mvnw sonar:sonar'
+                sh 'mvnw sonar:sonar'
             }
         }
         
@@ -36,14 +36,14 @@ pipeline {
     
           stage('Test Compilation'){
             steps{
-                bat 'mvnw compile'
+                sh 'mvnw compile'
             }
         }
         
     
           stage('Test deploiment'){
             steps{
-                bat 'mvnw deploy'
+                sh 'mvnw deploy'
             }
         }
         
